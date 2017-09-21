@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170915200351) do
+ActiveRecord::Schema.define(version: 20170921003632) do
+
+  create_table "gates", force: :cascade do |t|
+    t.string "codigo"
+    t.string "ubicacion"
+    t.string "descripcion"
+    t.string "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "keys", force: :cascade do |t|
     t.string "codigo"
     t.string "numero_de_copia"
+    t.integer "gate_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["gate_id"], name: "index_keys_on_gate_id"
   end
 
 end

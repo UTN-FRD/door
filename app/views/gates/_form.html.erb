@@ -1,0 +1,47 @@
+ <%= form_for(@gate) do |f| %>
+
+     
+      <% if @gate.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@gate.errors.count, "error") %> esta llave no puede ser guardada:
+          </h2>
+          <ul>
+            <% @gate.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+     
+      <div class="form-group">
+        <%=f.label :codigo %>
+        <%=f.text_field :codigo, :class => "form-control"%>
+      </div>
+     
+     
+     <div class="form-group">
+        <%=f.label :ubicacion %>
+        <%=f.text_field :ubicacion, :class => "form-control"%>
+      </div>
+
+     <div class="form-group">
+        <%=f.label :descripcion %>
+        <%=f.text_field :descripcion, :class => "form-control"%>
+      </div>
+     
+     <div class="form-group">
+        <%=f.label :area %>
+        <%=f.text_field :area, :class => "form-control"%>
+      </div>
+
+      <h2>Agregar llave:</h2>
+      
+      <div class="form-group"> 
+        <%= link_to 'Volver', gates_path, class: 'btn btn-default' %>
+          <%=f.submit 'Guardar', :class=> "btn btn-success"%>
+      </div>
+
+
+      
+    <% end %>

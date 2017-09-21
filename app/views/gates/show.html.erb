@@ -1,0 +1,27 @@
+<p>
+  <strong>Title:</strong>
+  <%= @gate.codigo %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @gate.ubicacion %>
+</p>
+ 
+<h2>Add a key:</h2>
+<%= form_with(model: [ @gate, @gate.keys.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :keyer %><br>
+    <%= form.text_field :keyer %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Edit', edit_gate_path(@gate) %> |
+<%= link_to 'Back', gates_path %>

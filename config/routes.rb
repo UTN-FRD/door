@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
   resources :keys
 
+  resources :gates do
+	  resources :keys
+  end
+
   root 'welcome#index' 
 end
