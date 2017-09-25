@@ -16,23 +16,46 @@
      
       <div class="form-group">
         <%=f.label :codigo %>
-        <%=f.text_field :codigo, :class => "form-control"%>
+        <%=f.text_field :codigo, :class => "form-control", placeholder: 'Ej. 44'%>
       </div>
      
      
      <div class="form-group">
         <%=f.label :ubicacion %>
-        <%=f.text_field :ubicacion, :class => "form-control"%>
+        <%=f.text_field :ubicacion, :class => "form-control", placeholder: 'Locación'%>
       </div>
 
      <div class="form-group">
         <%=f.label :descripcion %>
-        <%=f.text_field :descripcion, :class => "form-control"%>
+        <%=f.text_field :descripcion, :class => "form-control", placeholder: 'Observaciones'%>
       </div>
      
-     <div class="form-group">
-        <%=f.label :area %>
-        <%=f.text_field :area, :class => "form-control"%>
+     <h3>Área</h3>
+
+     <div class="checkbox">
+     
+          <label>
+            <%= check_box_tag "laboratorio", "yes" %>
+            Laboratorio
+          </label>
+
+
+            <label>
+                <%= check_box_tag "Oficina", "yes" %>
+                Oficina
+            </label>
+
+
+            <label>
+                <%= check_box_tag "aula", "yes" %>
+                Aula
+            </label>
+
+
+            <label>
+                <%= check_box_tag "otro", "yes" %>
+                Otro
+            </label>
       </div>
 
       <h2>Agregar llave:</h2>
